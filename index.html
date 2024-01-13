@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+<!--  Based on this image https://dribbble.com/shots/2723641-Candle -->
+
+<div class="candle">
+
+    <div class="flame">
+      <div class="flame-big"></div>
+      <div class="flame-small"></div>
+    </div>
+
+    <div class="candleBody">
+        <div class="eye eye1"></div>
+        <div class="eye eye2"></div>
+
+        <div class="cheek1"></div>
+        <div class="cheek2"></div>
+
+        <div class="smile"></div>
+
+        <div class="leftHand"></div>
+        <div class="rightHand"></div>
+        <div class="shadowBody"></div>
+    </div>
+
+    <div class="circles">
+      <div class="baseStar star1"></div>
+      <div class="baseStar star2"></div>
+      <div class="baseStar star3"></div>
+      <div class="baseStar star4"></div>
+      <div class="baseStar star5"></div>
+      <div class="baseStar star6"></div>
+    </div>
+    
+  </div>
+<style>
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+  :root {
+    --bg-1: #161540;
+    --bg-2: #241752;
+    --bg-3: #401588;
+    --bg-4: #7658AA;
+    --yellow: #F6D005;
+    --orange: #F58407;
+    --shadow:#CBC0DA;
+    --body:#F5F5F5;
+    --flame-dark: #FCC804;
+    --flame-light: #FFD800;
+  }
+
+  body {
+    background: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    min-height: 100vh;
+    margin: 50px 0 0 ;
+  }
+  .candle {
+    position: relative;
+  }
+  .candleBody {
+    width: 110px;
+    height: 139px;
+    background: var(--body);
+    border: 8px solid var(--bg-1);
+    border-bottom: none;
+    -webkit-border-radius: 25px 25px 0 0;
+            border-radius: 25px 25px 0 0;
+    position: relative;
+    -webkit-box-shadow: inset -10px 0px 0px var(--shadow);
+            box-shadow: inset -10px 0px 0px var(--shadow);
+  }
+  .candleBody:before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: -25px;
+    width: 80px;
+    height: 30px;
+    -webkit-border-radius: 20px 20px 0 0;
+            border-radius: 20px 20px 0 0;
+    border: 8px solid var(--bg-1);
+    background: var(--body);
+    -webkit-box-shadow: inset -10px 0px 0px var(--shadow);
+            box-shadow: inset -10px 0px 0px var(--shadow);
+  }
+  .candleBody:after {
+    content: '';
+    position: absolute;
+    top: -43px;
+    left: 43px;
+    width: 10px;
+    height: 41px;
+    -webkit-border-radius: 10px 10px 0 0;
+            border-radius: 10px 10px 0 0;
+    background: var(--bg-1);
+    background: -webkit-linear-gradient(bottom, var(--bg-1), var(--bg-1) 15px, var(--orange) 15px);
+    background: -o-linear-gradient(bottom, var(--bg-1), var(--bg-1) 15px, var(--orange) 15px);
+    background: linear-gradient(0deg, var(--bg-1), var(--bg-1) 15px, var(--orange) 15px);
+    z-index: 1;
+  }
+  .shadowBody {
+    width: 13px;
+    height: 37px;
+    background: var(--shadow);
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    z-index: 0;
+  }
+
+  .eye {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    background: var(--bg-1);
+    position: absolute;
+  }
+  .eye1 {
+    top: 27px;
+    left: 26px;
+  }
+  .eye2 {
+    top: 27px;
+    right: 24px;
+    -webkit-transform-origin: 50%;
+        -ms-transform-origin: 50%;
+            transform-origin: 50%;
+    -webkit-animation: blink 5s infinite;
+            animation: blink 5s infinite;
+  }
+  .cheek1 {
+    position: absolute;
+    top: 42px;
+    left: 22px;
+    width: 8px;
+    height: 8px;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    background: var(--orange);
+  }
+  .cheek2 {
+    position: absolute;
+    top: 42px;
+    right: 22px;
+    width: 8px;
+    height: 8px;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    background: var(--orange);
+  }
+  .smile {
+    position: absolute;
+    top: 38px;
+    left: 41px;
+    height: 7px;
+    width: 14px;
+    border: 3px solid var(--bg-1);
+    border-top: none;
+    -webkit-border-bottom-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+  }
+
+  .leftHand {
+    width: 20px;
+    height: 17px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    position: absolute;
+    top: 63px;
+    left: -6px;
+    border: 6px solid var(--bg-1);
+    border-top: none;
+    -webkit-border-bottom-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+  }
+
+  .rightHand {
+    width: 21px;
+    height: 30px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    position: absolute;
+    top: 67px;
+    right: 8px;
+    border: 6px solid var(--bg-1);
+    border-top: none;
+    -webkit-border-bottom-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+    z-index: 2;
+    background: #fff;
+  }
+  .rightHand:before {
+    content: '';
+    width: 20px;
+    height: 17px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 9px;
+    border: 6px solid var(--bg-1);
+    border-top: none;
+    -webkit-border-bottom-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+  }
+
+  .flame {
+    position: absolute;
+    z-index: 1;
+    top: -48px;
+    left: 36px;
+    -webkit-transform:  rotate(5deg);
+        -ms-transform:  rotate(5deg);
+            transform:  rotate(5deg);
+    -webkit-transform-origin: bottom center;
+        -ms-transform-origin: bottom center;
+            transform-origin: bottom center;
+    width: 40px;
+    height: 30px;
+    -webkit-animation: wind 2s infinite;
+            animation: wind 2s infinite;
+  }
+
+  @-webkit-keyframes wind {
+    
+    25% {
+      -webkit-transform: rotate(5deg);
+              transform: rotate(5deg);
+    }
+    
+    75% {
+      -webkit-transform: rotate(-5deg);
+              transform: rotate(-5deg);
+    }
+  }
+
+  @keyframes wind {
+    
+    25% {
+      -webkit-transform: rotate(5deg);
+              transform: rotate(5deg);
+    }
+    
+    75% {
+      -webkit-transform: rotate(-5deg);
+              transform: rotate(-5deg);
+    }
+  }
+  @-webkit-keyframes blink {
+    0%, 100% {
+        -webkit-transform: scaleY(.05);
+                transform: scaleY(.05);
+    }
+    5%,
+    95% {
+        -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+    }
+  }
+  @keyframes blink {
+    0%, 100% {
+        -webkit-transform: scaleY(.05);
+                transform: scaleY(.05);
+    }
+    5%,
+    95% {
+        -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+    }
+  }
+
+  .flame-small {
+    position: absolute;
+    left: 50%;
+    top: 7px;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background: var(--flame-light);
+    width: 15px;
+    height: 20px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+
+  }
+
+  .flame-small::before {
+    content: '';
+    background: var(--flame-light);
+    position: absolute;
+    width: 12px;
+    height: 15px;
+    top: -11px;
+    left: 2px;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  .flame-big {
+    position: absolute;
+    background: var(--flame-dark);
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+
+  }
+
+  .flame-big::before {
+    content: '';
+    width: 40px;
+    height: 37px;
+    top: -22px;
+    left: 0px;
+    background: var(--flame-dark);
+    position: absolute;
+    -webkit-clip-path: polygon(50% 0%, 1% 100%, 99% 100%);
+            clip-path: polygon(50% 0%, 1% 100%, 99% 100%);
+  }
+
+  .circles{
+    width: 285px;
+    height: 285px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index: -1;
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
+    left: 50%;
+    top: -178px;
+    background-image: 
+    -webkit-radial-gradient(center center, circle, var( --bg-4), var( --bg-4) 58px, var(--bg-3) 58px, var(--bg-3) 100px, var(--bg-2) 100px, var(--bg-2));
+    background-image: 
+    -o-radial-gradient(center center, circle, var( --bg-4), var( --bg-4) 58px, var(--bg-3) 58px, var(--bg-3) 100px, var(--bg-2) 100px, var(--bg-2));
+    background-image: 
+    radial-gradient(circle at center center, var( --bg-4), var( --bg-4) 58px, var(--bg-3) 58px, var(--bg-3) 100px, var(--bg-2) 100px, var(--bg-2));
+    -webkit-animation: shadowMove 2s infinite;
+            animation: shadowMove 2s infinite;
+  }
+
+  @-webkit-keyframes shadowMove {
+    
+    50%{
+      -webkit-transform: translate(-50%) scale(0.98);
+              transform: translate(-50%) scale(0.98);
+    }
+  }
+
+  @keyframes shadowMove {
+    
+    50%{
+      -webkit-transform: translate(-50%) scale(0.98);
+              transform: translate(-50%) scale(0.98);
+    }
+  }
+
+  .baseStar {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    -webkit-animation: star 3s infinite;
+            animation: star 3s infinite;
+  }
+  .baseStar:after {
+    content: '';
+    background: #fff;
+    width: 7px;
+    height: 14px;
+    -webkit-clip-path: ellipse(50% 50% at 50% 50%);
+            clip-path: ellipse(50% 50% at 50% 50%);
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .baseStar:before {
+    content: '';
+    background: #fff;
+    width: 14px;
+    height: 7px;
+    -webkit-clip-path: ellipse(50% 50% at 50% 50%);
+            clip-path: ellipse(50% 50% at 50% 50%);
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+
+  .star1 {
+    top: 64px;
+    left: 42px;
+    -webkit-animation-delay: 1000ms;
+            animation-delay: 1000ms;
+  }
+  .star2 {
+    top: 101px;
+    right: 50px;
+    -webkit-animation-delay: 250ms;
+            animation-delay: 250ms;
+  }
+  .star3 {
+    top: 200px;
+    left: 28px;
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
+  }
+
+  .star4 {
+    top: 143px;
+    right: 6px;
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-animation-delay: 150ms;
+            animation-delay: 150ms;
+  }
+
+  .star5 {
+    top: 186px;
+    right: 54px;
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms;
+  }
+
+  .star6 {
+    top: 119px;
+    left: 66px;
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-animation-delay: 3000ms;
+            animation-delay: 3000ms;
+  }
+
+  @-webkit-keyframes star {
+    50% {
+      -webkit-transform: scale(0.5) rotate(10deg);
+              transform: scale(0.5) rotate(10deg);
+    }
+  }
+
+  @keyframes star {
+    50% {
+      -webkit-transform: scale(0.5) rotate(10deg);
+              transform: scale(0.5) rotate(10deg);
+    }
+  } 
+</style>
+</body>
+<html>
